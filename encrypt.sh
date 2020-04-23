@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# encrypt golang: https://golang.org/src/crypto/cipher/example_test.go
+
 echo "some data" > sign.txt
 
 # openssl enc -nosalt -aes-256-cbc -pbkdf2 -k hello-aes -P

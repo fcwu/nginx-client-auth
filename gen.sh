@@ -16,6 +16,6 @@ openssl req -x509 -sha256 -newkey rsa:4096 -keyout ca.key -out ca.crt -days 356 
 openssl req -new -newkey rsa:4096 -keyout server.key -out server.csr -nodes -subj '/CN=10.144.48.106'
 openssl x509 -req -sha256 -days 365 -in server.csr -CA ca.crt -CAkey ca.key -set_serial 01 -out server.crt -extensions req_ext -extfile v3.ext
 openssl req -new -newkey rsa:4096 -keyout client.key -out client.csr -nodes -subj '/CN=10.144.48.106'
-# openssl x509 -req -sha256 -days 365 -in client.csr -CA ca.crt -CAkey ca.key -set_serial 02 -out client.crt -extensions req_ext -extfile v3.ext
+openssl x509 -req -sha256 -days 365 -in client.csr -CA ca.crt -CAkey ca.key -set_serial 02 -out client.crt -extensions req_ext -extfile v3.ext
 # openssl req -new -newkey rsa:4096 -keyout ubuntu.dorowu.com.key -out ubuntu.dorowu.com.csr -nodes -subj '/CN=ubuntu.dorowu.com'
 # openssl x509 -req -sha256 -days 365 -in ubuntu.dorowu.com.csr -CA ca.crt -CAkey ca.key -set_serial 03 -out ubuntu.dorowu.com.crt -extensions req_ext -extfile v3.ext
